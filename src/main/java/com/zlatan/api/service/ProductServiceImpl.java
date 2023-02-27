@@ -25,18 +25,18 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public List<Product> getAllProduct() {
-        List<ProductEntity> productEntities = productRepository.findAll();
-        List<Product> products = productEntities.stream().map(pro -> new Product(
-                pro.getId(),
-                pro.getName(),
-                pro.getCatId(),
-                pro.getPrice(),
-                pro.getDesc(),
-                pro.getSpecification(),
-                pro.isHighlight(),
-                pro.isStatus()
-        )).collect(Collectors.toList());
-        return products;
+//        List<ProductEntity> productEntities = productRepository.findAll();
+//        List<Product> products = productEntities.stream().map(pro -> new Product(
+//                pro.getId(),
+//                pro.getName(),
+//                pro.getCatId(),
+//                pro.getPrice(),
+//                pro.getDesc(),
+//                pro.getSpecification(),
+//                pro.isHighlight(),
+//                pro.isStatus()
+//        )).collect(Collectors.toList());
+        return null;
     }
 
 
@@ -63,7 +63,6 @@ public class ProductServiceImpl implements ProductService{
         productEntity.setDesc(product.getDesc());
         productEntity.setPrice(product.getPrice());
         productEntity.setHighlight(product.isHighlight());
-        productEntity.setCatId(product.getCatId());
         productEntity.setSpecification(product.getSpecification());
         productEntity.setStatus(product.isStatus());
 

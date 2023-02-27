@@ -13,7 +13,6 @@ import javax.persistence.ManyToOne;
 public class Product {
     private long id;
     private String name;
-    private long catId;
     private double price;
     private String desc;
     private String specification;

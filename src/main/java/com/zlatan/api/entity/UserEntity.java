@@ -1,5 +1,6 @@
 package com.zlatan.api.entity;
 
+import com.sun.istack.NotNull;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -8,16 +9,17 @@ import java.util.Set;
 
 @Entity
 @Data
-@Table(name="categories")
-public class CategoryEntity {
+@Table(name="users")
+public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @NotNull
     private String name;
-    private String url;
-    private String icon;
-    private boolean highlight;
+
+    private String address;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "catId", referencedColumnName = "id")
-    Set<ProductEntity> products = new HashSet<>();
+    @JoinColumn(name = "userId", referencedColumnName = "id")
+    Set<TaskEntity> comments = new HashSet<>();
+
 }
